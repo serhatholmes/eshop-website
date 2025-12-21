@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export const socialLinks = [
@@ -20,8 +21,8 @@ export const socialLinks = [
     ),
   },
   {
-    href: "https://x.com/",
-    label: "X",
+    href: "https://www.facebook.com/",
+    label: "Facebook",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -29,21 +30,24 @@ export const socialLinks = [
         className="h-4 w-4"
         fill="currentColor"
       >
-        <path d="M19.5 4.5h-3l-3.24 4.03L9.86 4.5H4.5l6.02 7.45L4.8 19.5h3l3.41-4.25 3.62 4.25h5.17l-6.25-7.5z" />
+        <path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.79c0-2.5 1.5-3.88 3.8-3.88 1.1 0 2.25.2 2.25.2v2.48h-1.27c-1.25 0-1.64.78-1.64 1.58V12h2.79l-.45 2.89h-2.34v6.99A10 10 0 0 0 22 12" />
       </svg>
     ),
   },
   {
-    href: "https://www.linkedin.com/",
-    label: "LinkedIn",
+    href: "mailto:info@tiridesigns.com",
+    label: "Email",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         className="h-4 w-4"
-        fill="currentColor"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
       >
-        <path d="M4.98 3.5C4.98 4.6 4.12 5.5 3 5.5s-2-.9-2-2 0-2 2-2 2 .9 2 2zM1 21h4V7H1v14zm7-9.5c0-1.8 0-3.5-.1-4.5h3.5l.2 2h.1c.5-1.1 1.9-2.4 4.1-2.4 2.7 0 4.7 1.8 4.7 5.8V21h-4v-7.6c0-1.7-.6-2.9-2-2.9-1.1 0-1.7.8-2 1.6-.1.3-.1.8-.1 1.2V21h-4V11.5z" />
+        <rect x="3" y="5" width="18" height="14" rx="2" ry="2" />
+        <path d="m3.5 7 7.7 5.14a2 2 0 0 0 2.1 0L21 7" />
       </svg>
     ),
   },
@@ -54,12 +58,19 @@ export function Header() {
     <header className="sticky top-0 z-30 border-b border-white/10 bg-slate-950/80 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
         <div className="flex items-center gap-3">
-          <div className="grid h-10 w-10 place-items-center rounded-full bg-gradient-to-br from-amber-300 via-orange-500 to-rose-600 text-xs font-semibold uppercase text-slate-950 shadow-lg shadow-amber-500/30">
-            es
+          <div className="relative h-10 w-10 overflow-hidden rounded-full bg-white">
+            <Image
+              src="/images/tridesignlogo.png"
+              alt="Tri Design logo"
+              fill
+              sizes="40px"
+              className="object-cover"
+              priority
+            />
           </div>
         </div>
-        <div className="text-center text-base font-semibold uppercase tracking-[0.3em] text-slate-50 sm:text-lg">
-          Eshop Vitrin
+        <div className="text-center text-base font-semibold uppercase tracking-[0.3em] text-slate-50 sm:text-md">
+          TiriDesign
         </div>
         <nav className="flex items-center gap-2">
           {socialLinks.map((item) => (

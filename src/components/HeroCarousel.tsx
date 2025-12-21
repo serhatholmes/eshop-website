@@ -73,15 +73,15 @@ export function HeroCarousel() {
         <div className="absolute inset-0 bg-gradient-to-br from-slate-950/80 via-slate-900/75 to-indigo-900/45" />
       </div>
 
-      <div className="relative z-10 flex min-h-[65vh] flex-col justify-between gap-8 p-6 sm:p-10 lg:p-14">
-        <div className="flex max-w-2xl flex-col gap-4">
+      <div className="relative z-10 flex min-h-[65vh] flex-col justify-between gap-10 px-12 py-12 sm:px-16 sm:py-16 lg:px-20 lg:py-20">
+        <div className="flex max-w-2xl flex-col gap-5">
           <span className="w-fit rounded-full bg-white/10 px-3 py-1 text-xs uppercase tracking-[0.25em] text-amber-200">
             {slides[activeIndex].badge}
           </span>
-          <h1 className="text-3xl font-semibold leading-tight text-white drop-shadow-md sm:text-4xl lg:text-5xl">
+          <h1 className="text-2xl font-semibold leading-tight text-white drop-shadow-md sm:text-3xl lg:text-4xl">
             {slides[activeIndex].title}
           </h1>
-          <p className="text-base text-slate-100/90 sm:text-lg lg:text-xl">
+          <p className="text-sm text-slate-100/90 sm:text-base lg:text-lg">
             {slides[activeIndex].description}
           </p>
           <div className="flex flex-wrap gap-3">
@@ -101,7 +101,7 @@ export function HeroCarousel() {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute inset-x-0 bottom-6 flex justify-center">
+      <div className="pointer-events-none absolute inset-x-0 bottom-6 z-20 flex justify-center">
         <div className="pointer-events-auto flex items-center gap-2 rounded-full border border-white/25 bg-slate-950/60 px-3 py-2 shadow-lg shadow-slate-900/40 backdrop-blur">
           {slides.map((slide, index) => (
             <button
@@ -119,13 +119,13 @@ export function HeroCarousel() {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute inset-y-0 left-0 right-0">
-        <div className="flex h-full items-center justify-between px-3 sm:px-5 lg:px-6">
+      <div className="pointer-events-none absolute inset-y-0 left-0 right-0 z-20">
+        <div className="flex h-full items-center justify-between px-2 sm:px-2 lg:px-5">
           <button
             type="button"
             onClick={() => goTo("prev")}
             aria-label="Onceki slayt"
-            className="pointer-events-auto grid h-12 w-12 place-items-center rounded-full border border-white/25 bg-slate-950/60 text-xl font-bold text-white shadow-lg shadow-slate-900/50 transition hover:-translate-y-0.5 hover:border-amber-200 hover:bg-slate-900/70"
+            className="pointer-events-auto grid h-10 w-10 place-items-center rounded-full border border-white/25 bg-slate-950/60 text-lg font-bold text-white shadow-lg shadow-slate-900/50 transition hover:-translate-y-0.5 hover:border-amber-200 hover:bg-slate-900/70 sm:h-11 sm:w-11 sm:text-xl md:h-12 md:w-12"
           >
             &lt;
           </button>
@@ -133,7 +133,7 @@ export function HeroCarousel() {
             type="button"
             onClick={() => goTo("next")}
             aria-label="Sonraki slayt"
-            className="pointer-events-auto grid h-12 w-12 place-items-center rounded-full border border-white/25 bg-slate-950/60 text-xl font-bold text-white shadow-lg shadow-slate-900/50 transition hover:-translate-y-0.5 hover:border-amber-200 hover:bg-slate-900/70"
+            className="pointer-events-auto grid h-10 w-10 place-items-center rounded-full border border-white/25 bg-slate-950/60 text-lg font-bold text-white shadow-lg shadow-slate-900/50 transition hover:-translate-y-0.5 hover:border-amber-200 hover:bg-slate-900/70 sm:h-11 sm:w-11 sm:text-xl md:h-12 md:w-12"
           >
             &gt;
           </button>
