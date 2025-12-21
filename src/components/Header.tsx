@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-const socialLinks = [
+export const socialLinks = [
   {
-    href: "https://www.instagram.com/",
+    href: "https://www.instagram.com/tiridesigns",
     label: "Instagram",
     icon: (
       <svg
@@ -52,7 +52,7 @@ const socialLinks = [
 export function Header() {
   return (
     <header className="sticky top-0 z-30 border-b border-white/10 bg-slate-950/80 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
         <div className="flex items-center gap-3">
           <div className="grid h-10 w-10 place-items-center rounded-full bg-gradient-to-br from-amber-300 via-orange-500 to-rose-600 text-xs font-semibold uppercase text-slate-950 shadow-lg shadow-amber-500/30">
             es

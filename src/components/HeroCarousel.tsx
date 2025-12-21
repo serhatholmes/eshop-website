@@ -13,23 +13,23 @@ type Slide = {
 const slides: Slide[] = [
   {
     image: "/images/slide1.jpg",
-    title: "Yeni sezon parçaları şimdi vitrine çıktı.",
+    title: "Yeni sezon parcalari simdi vitrine cikti.",
     description:
-      "Minimal dokunuşlar, kuvvetli silüetler. Şehir temposuna eşlik eden koleksiyonla tanışın.",
+      "Minimal dokunuslar, kuvvetli siluetler. Sehir temposuna eslik eden koleksiyonla tanisin.",
     badge: "2025 koleksiyon",
   },
   {
     image: "/images/slide2.jpg",
-    title: "Rahatlık ve şıklık aynı yerde.",
+    title: "Rahatlik ve siklik ayni yerde.",
     description:
-      "Nefes alan dokular, zamansız renkler ve hafif katmanlar ile stilinizi tamamlayın.",
-    badge: "özel seri",
+      "Nefes alan dokular, zamansiz renkler ve hafif katmanlar ile stilinizi tamamlayin.",
+    badge: "ozel seri",
   },
   {
     image: "/images/slide3.jpg",
-    title: "Her ekranda güçlü bir ilk izlenim.",
+    title: "Her ekranda guclu bir ilk izlenim.",
     description:
-      "Mobil ve masaüstünde uyumlu, çarpıcı görsellerle markanızı öne çıkarın.",
+      "Mobil ve masaustunde uyumlu, carpici gorsellerle markanizi one cikarin.",
     badge: "responsive deneyim",
   },
 ];
@@ -95,43 +95,48 @@ export function HeroCarousel() {
               href="#detay"
               className="rounded-full border border-white/30 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-amber-200 hover:bg-white/20 sm:text-base"
             >
-              Detayları gör
+              Detaylari gor
             </a>
           </div>
         </div>
+      </div>
 
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex items-center gap-3">
+      <div className="pointer-events-none absolute inset-x-0 bottom-6 flex justify-center">
+        <div className="pointer-events-auto flex items-center gap-2 rounded-full border border-white/25 bg-slate-950/60 px-3 py-2 shadow-lg shadow-slate-900/40 backdrop-blur">
+          {slides.map((slide, index) => (
             <button
+              key={slide.image}
               type="button"
-              onClick={() => goTo("prev")}
-              className="rounded-full border border-white/25 bg-white/10 px-4 py-2 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:border-amber-200 hover:bg-white/20"
-            >
-              ← Önceki
-            </button>
-            <button
-              type="button"
-              onClick={() => goTo("next")}
-              className="rounded-full border border-white/25 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-amber-200 hover:bg-white/20"
-            >
-              Sonraki →
-            </button>
-          </div>
-          <div className="flex items-center gap-2">
-            {slides.map((slide, index) => (
-              <button
-                key={slide.image}
-                type="button"
-                onClick={() => setActiveIndex(index)}
-                className={`h-2.5 w-2.5 rounded-full border border-white/40 transition ${
-                  index === activeIndex
-                    ? "bg-amber-300 shadow shadow-amber-300/60"
-                    : "bg-white/20 hover:bg-white/40"
-                }`}
-                aria-label={`Slayt ${index + 1}`}
-              />
-            ))}
-          </div>
+              onClick={() => setActiveIndex(index)}
+              className={`h-2.5 w-2.5 rounded-full border border-white/40 transition ${
+                index === activeIndex
+                  ? "bg-amber-300 shadow shadow-amber-300/60"
+                  : "bg-white/20 hover:bg-white/40"
+              }`}
+              aria-label={`Slayt ${index + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+
+      <div className="pointer-events-none absolute inset-y-0 left-0 right-0">
+        <div className="flex h-full items-center justify-between px-3 sm:px-5 lg:px-6">
+          <button
+            type="button"
+            onClick={() => goTo("prev")}
+            aria-label="Onceki slayt"
+            className="pointer-events-auto grid h-12 w-12 place-items-center rounded-full border border-white/25 bg-slate-950/60 text-xl font-bold text-white shadow-lg shadow-slate-900/50 transition hover:-translate-y-0.5 hover:border-amber-200 hover:bg-slate-900/70"
+          >
+            &lt;
+          </button>
+          <button
+            type="button"
+            onClick={() => goTo("next")}
+            aria-label="Sonraki slayt"
+            className="pointer-events-auto grid h-12 w-12 place-items-center rounded-full border border-white/25 bg-slate-950/60 text-xl font-bold text-white shadow-lg shadow-slate-900/50 transition hover:-translate-y-0.5 hover:border-amber-200 hover:bg-slate-900/70"
+          >
+            &gt;
+          </button>
         </div>
       </div>
     </section>
