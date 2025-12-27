@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prebuild": "prisma generate",
     "dev": "cross-env NEXT_DISABLE_TURBOPACK=1 NEXT_WEBPACK_USE_TURBOPACK=0 NEXT_EXPERIMENTAL_TURBOPACK=0 NEXT_SKIP_TURBOPACK=1 NEXT_PRIVATE_TURBOPACK=0 TURBOPACK=0 next dev",
     "build": "cross-env NEXT_DISABLE_TURBOPACK=1 NEXT_WEBPACK_USE_TURBOPACK=0 NEXT_EXPERIMENTAL_TURBOPACK=0 NEXT_SKIP_TURBOPACK=1 NEXT_PRIVATE_TURBOPACK=0 TURBOPACK=0 next build",
     "start": "next start",
