@@ -1,4 +1,6 @@
-import { ProductCard, type Product } from "./ProductCard";
+import type { Product } from "@prisma/client";
+
+import { ProductCard } from "./ProductCard";
 
 export function ProductCards({ products }: { products: Product[] }) {
   return (

@@ -55,7 +55,7 @@ export const socialLinks = [
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-30 border-b border-white/10 bg-slate-950/80 backdrop-blur">
+    <header className="sticky top-0 z-30 border-b border-[#6b3f1f]/50 bg-[#6b3f1f] text-[#f8edd8] backdrop-blur">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
         <div className="flex items-center gap-3">
           <div className="relative h-10 w-10 overflow-hidden rounded-full bg-white">
@@ -69,7 +69,7 @@ export function Header() {
             />
           </div>
         </div>
-        <div className="text-center text-base font-semibold uppercase tracking-[0.3em] text-slate-50 sm:text-md">
+        <div className="text-center text-base font-semibold uppercase tracking-[0.3em] text-[#f8edd8] sm:text-md">
           TiriDesign
         </div>
         <nav className="flex items-center gap-2">
@@ -79,9 +79,9 @@ export function Header() {
               href={item.href}
               target="_blank"
               rel="noreferrer"
-              className="group flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3 py-2 text-sm font-medium text-slate-50 transition hover:-translate-y-0.5 hover:border-amber-300/60 hover:bg-white/20"
+              className="group flex items-center gap-2 rounded-full border border-white/20 bg-white/15 px-3 py-2 text-sm font-medium text-[#f8edd8] transition hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/25"
             >
-              <span className="text-amber-200 transition group-hover:text-amber-100">
+              <span className="text-[#f8edd8] transition group-hover:text-white">
                 {item.icon}
               </span>
               <span className="hidden sm:inline">{item.label}</span>

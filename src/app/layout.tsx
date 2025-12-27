@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Eshop Vitrin",
-  description: "Next.js ve Tailwind CSS ile hazırlanmış modern vitrin sayfası",
+  title: "TiriDesign",
+  description: "TiriDesign'ın resmi web sitesi",
 };
 
 export default function RootLayout({
@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#e9b76d] text-[#2c1a0c]`}
       >
         {children}
       </body>

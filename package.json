@@ -3,13 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "cross-env NEXT_DISABLE_TURBOPACK=1 NEXT_WEBPACK_USE_TURBOPACK=0 next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "prisma": "prisma"
   },
   "dependencies": {
+    "@prisma/client": "^6.19.1",
+    "cloudinary": "^2.8.0",
     "next": "16.1.0",
+    "next-cloudinary": "^6.17.5",
+    "prisma": "^6.19.1",
     "react": "19.2.3",
     "react-dom": "19.2.3"
   },
@@ -18,9 +23,11 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "cross-env": "^10.1.0",
     "eslint": "^9",
     "eslint-config-next": "16.1.0",
     "tailwindcss": "^4",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }

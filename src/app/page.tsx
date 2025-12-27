@@ -5,7 +5,7 @@ import { TabsNav } from "@/components/TabsNav";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col bg-slate-950 text-slate-50">
+    <div className="flex min-h-screen flex-col bg-[#e9b76d] text-[#2c1a0c]">
       <Header />
       <div className="py-5 sm:py-6">
         <TabsNav />

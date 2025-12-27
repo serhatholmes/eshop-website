@@ -87,13 +87,13 @@ export function HeroCarousel() {
           <div className="flex flex-wrap gap-3">
             <a
               href="#koleksiyon"
-              className="rounded-full bg-amber-400 px-5 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-amber-500/30 transition hover:-translate-y-0.5 hover:shadow-amber-400/40 sm:text-base"
+              className="rounded-full bg-[#6b3f1f] px-5 py-3 text-sm font-semibold text-[#f8edd8] shadow-lg shadow-[#6b3f1f]/40 transition hover:-translate-y-0.5 hover:shadow-[#6b3f1f]/60 sm:text-base"
             >
               Koleksiyonu incele
             </a>
             <a
               href="#detay"
-              className="rounded-full border border-white/30 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-amber-200 hover:bg-white/20 sm:text-base"
+              className="rounded-full border border-[#f8edd8]/50 bg-white/10 px-5 py-3 text-sm font-semibold text-[#f8edd8] transition hover:-translate-y-0.5 hover:border-[#f8edd8]/80 hover:bg-white/20 sm:text-base"
             >
               Detaylari gor
             </a>
@@ -110,7 +110,7 @@ export function HeroCarousel() {
               onClick={() => setActiveIndex(index)}
               className={`h-2.5 w-2.5 rounded-full border border-white/40 transition ${
                 index === activeIndex
-                  ? "bg-amber-300 shadow shadow-amber-300/60"
+                  ? "bg-[#6b3f1f] shadow shadow-[#6b3f1f]/60"
                   : "bg-white/20 hover:bg-white/40"
               }`}
               aria-label={`Slayt ${index + 1}`}
@@ -125,7 +125,7 @@ export function HeroCarousel() {
             type="button"
             onClick={() => goTo("prev")}
             aria-label="Onceki slayt"
-            className="pointer-events-auto grid h-10 w-10 place-items-center rounded-full border border-white/25 bg-slate-950/60 text-lg font-bold text-white shadow-lg shadow-slate-900/50 transition hover:-translate-y-0.5 hover:border-amber-200 hover:bg-slate-900/70 sm:h-11 sm:w-11 sm:text-xl md:h-12 md:w-12"
+            className="pointer-events-auto grid h-10 w-10 place-items-center rounded-full border border-[#f8edd8]/40 bg-[#6b3f1f]/70 text-lg font-bold text-[#f8edd8] shadow-lg shadow-[#6b3f1f]/50 transition hover:-translate-y-0.5 hover:border-[#f8edd8]/70 hover:bg-[#6b3f1f]/80 sm:h-11 sm:w-11 sm:text-xl md:h-12 md:w-12"
           >
             &lt;
           </button>
@@ -133,7 +133,7 @@ export function HeroCarousel() {
             type="button"
             onClick={() => goTo("next")}
             aria-label="Sonraki slayt"
-            className="pointer-events-auto grid h-10 w-10 place-items-center rounded-full border border-white/25 bg-slate-950/60 text-lg font-bold text-white shadow-lg shadow-slate-900/50 transition hover:-translate-y-0.5 hover:border-amber-200 hover:bg-slate-900/70 sm:h-11 sm:w-11 sm:text-xl md:h-12 md:w-12"
+            className="pointer-events-auto grid h-10 w-10 place-items-center rounded-full border border-[#f8edd8]/40 bg-[#6b3f1f]/70 text-lg font-bold text-[#f8edd8] shadow-lg shadow-[#6b3f1f]/50 transition hover:-translate-y-0.5 hover:border-[#f8edd8]/70 hover:bg-[#6b3f1f]/80 sm:h-11 sm:w-11 sm:text-xl md:h-12 md:w-12"
           >
             &gt;
           </button>
