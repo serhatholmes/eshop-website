@@ -21,9 +21,16 @@ export async function POST(request: Request) {
     const body = (await request.json()) as UploadPayload;
     const uploadSource = body.data ?? body.url;
 
+    if (!process.env.CLOUDINARY_URL) {
+      return NextResponse.json(
+        { error: "Sunucuda CLOUDINARY_URL ayarlanmamis. Cloudinary API anahtarini .env/Vercel ortam degiskenine ekleyin." },
+        { status: 500 }
+      );
+    }
+
     if (!isValidSource(uploadSource)) {
       return NextResponse.json(
-        { error: "Geçerli bir görsel URL'si (http/https) veya base64 data girin." },
+        { error: "Gecerli bir gorsel URL'si (http/https) veya base64 data girin." },
         { status: 400 }
       );
     }
@@ -45,7 +52,7 @@ export async function POST(request: Request) {
     const message =
       error?.message ||
       error?.error?.message ||
-      "Görsel yüklenemedi (URL'nin doğrudan görsel olduğundan emin olun).";
+      "Gorsel yuklenemedi (URL'nin dogrudan gorsel oldugundan emin olun).";
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }
