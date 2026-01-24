@@ -17,7 +17,7 @@ export default function ContactPage() {
         <div className="w-full max-w-7xl rounded-3xl border border-[#6b3f1f]/30 bg-[#f3d89b] p-6 shadow-2xl sm:p-10 lg:p-14">
           <div className="grid gap-10 lg:grid-cols-3 lg:items-start">
             <div className="lg:col-span-2">
-              <h1 className="text-3xl font-semibold sm:text-4xl">Iletisim</h1>
+              <h1 className="text-3xl font-semibold sm:text-4xl">İletisim</h1>
               <p className="mt-3 text-[#3b2414]">
                 Formu doldurun, ekibimiz en kisa sürede dönüş yapsin.
               </p>
@@ -56,7 +56,7 @@ export default function ContactPage() {
                     required
                     rows={5}
                     className="rounded-xl border border-[#6b3f1f]/30 bg-white/80 px-4 py-3 text-base text-[#2c1a0c] placeholder:text-[#72552e] focus:border-[#6b3f1f] focus:outline-none focus:ring-2 focus:ring-[#6b3f1f]/40"
-                    placeholder="Mesajinizi yazin..."
+                    placeholder="Mesajınızı yazın..."
                   />
                 </label>
                 <button
@@ -93,9 +93,7 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
-          <p className="mt-6 text-xs text-[#72552e]">
-            Not: GETFORM endpointinizi `GETFORM_ENDPOINT` sabitinde güncelleyin.
-          </p>
+        
         </div>
       </main>
       <Footer />

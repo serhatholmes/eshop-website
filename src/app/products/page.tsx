@@ -50,7 +50,7 @@ export default function ProductsPage() {
                 Tüm ürünler
               </h1>
               <p className="mt-2 text-[#3b2414]">
-                Koleksiyondaki saat modellerini keşfedin.
+                Tüm 3 Boyutlu baskı modellerini keşfedin.
               </p>
             </div>
             <div className="flex flex-col gap-2 sm:items-end">
