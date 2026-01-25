@@ -57,8 +57,12 @@ export function Header() {
   return (
     <header className="sticky top-0 z-30 border-b border-[#6b3f1f]/50 bg-[#6b3f1f] text-[#f8edd8] backdrop-blur">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
-        <div className="flex items-center gap-3">
-          <div className="relative h-10 w-10 overflow-hidden rounded-full bg-white">
+        <Link
+          href="/"
+          aria-label="Ana sayfa"
+          className="group flex items-center gap-3"
+        >
+          <div className="relative h-10 w-10 overflow-hidden rounded-full bg-white transition group-hover:scale-[1.03]">
             <Image
               src="/images/tridesignlogo.png"
               alt="Tri Design logo"
@@ -68,7 +72,7 @@ export function Header() {
               priority
             />
           </div>
-        </div>
+        </Link>
         <div className="text-center text-base font-semibold uppercase tracking-[0.3em] text-[#f8edd8] sm:text-md">
           TiriDesign
         </div>

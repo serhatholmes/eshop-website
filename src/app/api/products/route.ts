@@ -29,6 +29,7 @@ export async function POST(request: Request) {
         description: body.description,
         price: body.price,
         image: body.image,
+        collectionSlug: body.collectionSlug ?? null,
       },
     });
     return NextResponse.json(product, { status: 201 });

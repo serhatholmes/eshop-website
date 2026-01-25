@@ -1,38 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
-type Slide = {
-  image: string;
-  title: string;
-  description: string;
-  badge: string;
-};
+import { collections } from "@/data/collections";
 
-const slides: Slide[] = [
-  {
-    image: "/images/slide1.jpg",
-    title: "Yeni sezon parcalari simdi vitrine cikti.",
-    description:
-      "Minimal dokunuslar, kuvvetli siluetler. Sehir temposuna eslik eden koleksiyonla tanisin.",
-    badge: "2025 koleksiyon",
-  },
-  {
-    image: "/images/slide2.jpg",
-    title: "Rahatlik ve siklik ayni yerde.",
-    description:
-      "Nefes alan dokular, zamansiz renkler ve hafif katmanlar ile stilinizi tamamlayin.",
-    badge: "ozel seri",
-  },
-  {
-    image: "/images/slide3.jpg",
-    title: "Her ekranda guclu bir ilk izlenim.",
-    description:
-      "Mobil ve masaustunde uyumlu, carpici gorsellerle markanizi one cikarin.",
-    badge: "responsive deneyim",
-  },
-];
+const slides = collections;
 
 export function HeroCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -70,7 +44,7 @@ export function HeroCarousel() {
             }`}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-950/80 via-slate-900/75 to-indigo-900/45" />
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950/55 via-slate-900/45 to-indigo-900/25" />
       </div>
 
       <div className="relative z-10 flex min-h-[65vh] flex-col justify-between gap-10 px-12 py-12 sm:px-16 sm:py-16 lg:px-20 lg:py-20">
@@ -85,12 +59,12 @@ export function HeroCarousel() {
             {slides[activeIndex].description}
           </p>
           <div className="flex flex-wrap gap-3">
-            <a
-              href="#koleksiyon"
+            <Link
+              href={`/koleksiyon/${slides[activeIndex].slug}`}
               className="rounded-full bg-[#6b3f1f] px-5 py-3 text-sm font-semibold text-[#f8edd8] shadow-lg shadow-[#6b3f1f]/40 transition hover:-translate-y-0.5 hover:shadow-[#6b3f1f]/60 sm:text-base"
             >
               Koleksiyonu incele
-            </a>
+            </Link>
             <a
               href="#detay"
               className="rounded-full border border-[#f8edd8]/50 bg-white/10 px-5 py-3 text-sm font-semibold text-[#f8edd8] transition hover:-translate-y-0.5 hover:border-[#f8edd8]/80 hover:bg-white/20 sm:text-base"

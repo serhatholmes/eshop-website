@@ -9,6 +9,7 @@ const products = [
     description: "Lüminesans detaylar ve şık silikon kayış.",
     price: "3.150 TL",
     image: "/images/slide1.jpg",
+    collectionSlug: "sevgililer-gunu-ozel-urunleri",
   },
 ];
 
