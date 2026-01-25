@@ -1,6 +1,8 @@
 import type { Product } from "@prisma/client";
 
-export type ProductInput = Omit<Product, "id" | "createdAt" | "updatedAt">;
+export type ProductInput = Omit<Product, "id" | "createdAt" | "updatedAt"> & {
+  collectionSlug?: string | null;
+};
 
 const jsonHeaders = { "Content-Type": "application/json" };
 

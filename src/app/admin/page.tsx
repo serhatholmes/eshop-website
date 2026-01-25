@@ -11,6 +11,7 @@ import {
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { TabsNav } from "@/components/TabsNav";
+import { collections } from "@/data/collections";
 import {
   createProduct,
   deleteProduct,
@@ -22,7 +23,7 @@ import {
 import type { Product } from "@prisma/client";
 
 const ADMIN_NAME = "berkayfrt";
-const ADMIN_PASSWORD = "1997";
+const ADMIN_PASSWORD = "79189";
 const allowedImageTypes = new Set([
   "image/jpeg",
   "image/jpg",
@@ -30,11 +31,17 @@ const allowedImageTypes = new Set([
   "image/webp",
 ]);
 
+const collectionOptions = collections.map((collection) => ({
+  value: collection.slug,
+  label: collection.badge,
+}));
+
 const emptyProduct: ProductInput = {
   title: "",
   description: "",
   price: "",
   image: "",
+  collectionSlug: "",
 };
 
 const fileToDataUrl = (file: File) =>
@@ -169,6 +176,7 @@ export default function AdminPage() {
       const created = await createProduct({
         ...formValues,
         image: imageUrl,
+        collectionSlug: formValues.collectionSlug?.trim() || null,
       });
       setProducts((prev) => [...prev, created]);
       resetForm();
@@ -197,15 +205,16 @@ export default function AdminPage() {
 
   const startEdit = (product: Product) => {
     setEditingId(product.id);
-    setDrafts((prev) => ({
-      ...prev,
-      [product.id]: {
-        title: product.title,
-        description: product.description,
-        price: product.price,
-        image: product.image,
-      },
-    }));
+      setDrafts((prev) => ({
+        ...prev,
+        [product.id]: {
+          title: product.title,
+          description: product.description,
+          price: product.price,
+          image: product.image,
+          collectionSlug: product.collectionSlug ?? "",
+        },
+      }));
     setDraftImageNames((prev) => {
       const next = { ...prev };
       delete next[product.id];
@@ -238,6 +247,7 @@ export default function AdminPage() {
       const updated = await updateProduct(id, {
         ...draft,
         image: imageUrl,
+        collectionSlug: draft.collectionSlug?.trim() || null,
       });
       setProducts((prev) =>
         prev.map((product) => (product.id === id ? updated : product))
@@ -295,7 +305,7 @@ export default function AdminPage() {
               key={product.id}
               className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-inner"
             >
-              <div className="grid gap-3 sm:grid-cols-[1.3fr,2fr,0.8fr,1.3fr,auto,auto]">
+              <div className="grid gap-3 sm:grid-cols-[1.2fr,1.6fr,0.7fr,0.9fr,1.3fr,auto,auto]">
                 <input
                   type="text"
                   value={draft.title}
@@ -332,6 +342,24 @@ export default function AdminPage() {
                   disabled={!isEditing}
                   className="w-full rounded-xl border border-white/10 bg-slate-900/60 px-3 py-2 text-sm text-white placeholder:text-slate-400 focus:border-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-200/50 disabled:opacity-70"
                 />
+                <select
+                  value={draft.collectionSlug ?? ""}
+                  onChange={(e) =>
+                    setDrafts((prev) => ({
+                      ...prev,
+                      [product.id]: { ...draft, collectionSlug: e.target.value },
+                    }))
+                  }
+                  disabled={!isEditing}
+                  className="w-full rounded-xl border border-white/10 bg-slate-900/60 px-3 py-2 text-sm text-white focus:border-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-200/50 disabled:opacity-70"
+                >
+                  <option value="">Koleksiyon secin</option>
+                  {collectionOptions.map((collection) => (
+                    <option key={collection.value} value={collection.value}>
+                      {collection.label}
+                    </option>
+                  ))}
+                </select>
                 <div
                   className="space-y-2"
                   onDragOver={(e) => {
@@ -525,6 +553,26 @@ export default function AdminPage() {
                       className="rounded-xl border border-[#6b3f1f]/30 bg-white/70 px-4 py-3 text-[#2c1a0c] placeholder:text-[#72552e] focus:border-[#6b3f1f] focus:outline-none focus:ring-2 focus:ring-[#6b3f1f]/40"
                       placeholder="0 TL"
                     />
+                  </label>
+                  <label className="flex flex-[0.8] flex-col gap-2 text-sm font-medium text-[#2c1a0c]">
+                    Koleksiyon
+                    <select
+                      value={formValues.collectionSlug ?? ""}
+                      onChange={(e) =>
+                        setFormValues((prev) => ({
+                          ...prev,
+                          collectionSlug: e.target.value,
+                        }))
+                      }
+                      className="rounded-xl border border-[#6b3f1f]/30 bg-white/70 px-4 py-3 text-[#2c1a0c] focus:border-[#6b3f1f] focus:outline-none focus:ring-2 focus:ring-[#6b3f1f]/40"
+                    >
+                      <option value="">Koleksiyon secin</option>
+                      {collectionOptions.map((collection) => (
+                        <option key={collection.value} value={collection.value}>
+                          {collection.label}
+                        </option>
+                      ))}
+                    </select>
                   </label>
                   <div className="flex flex-[1.3] min-w-[260px] flex-col gap-2 text-sm font-medium text-[#2c1a0c]">
                     Gorsel

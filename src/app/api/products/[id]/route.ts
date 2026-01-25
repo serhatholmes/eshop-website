@@ -19,6 +19,7 @@ export async function PUT(request: NextRequest, { params }: ParamPromise) {
         description: body.description,
         price: body.price,
         image: body.image,
+        collectionSlug: body.collectionSlug ?? null,
       },
     });
     return NextResponse.json(product);

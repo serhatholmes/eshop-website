@@ -13,7 +13,7 @@ model Product {
   description String
   price       String
   image       String
+  collectionSlug String?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
-
