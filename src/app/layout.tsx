@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "TiriDesign",
-  description: "TiriDesign'ın resmi web sitesi",
+  title: "TiriDesigns",
+  description: "TiriDesigns'ın resmi web sitesi",
 };
 
 export default function RootLayout({

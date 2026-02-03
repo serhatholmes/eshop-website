@@ -65,7 +65,7 @@ export function Header() {
           <div className="relative h-10 w-10 overflow-hidden rounded-full bg-white transition group-hover:scale-[1.03]">
             <Image
               src="/images/tridesignlogo.png"
-              alt="Tri Design logo"
+              alt="TriDesigns logo"
               fill
               sizes="40px"
               className="object-cover"
@@ -74,7 +74,7 @@ export function Header() {
           </div>
         </Link>
         <div className="text-center text-base font-semibold uppercase tracking-[0.3em] text-[#f8edd8] sm:text-md">
-          TiriDesign
+          TiriDesigns
         </div>
         <nav className="flex items-center gap-2">
           {socialLinks.map((item) => (
